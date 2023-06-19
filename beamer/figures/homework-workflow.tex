@@ -1,0 +1,23 @@
+\documentclass{standalone}
+%-----------------------------------------------------------------------------%
+%%% TikZ %%%
+\usepackage{tikz}
+%-----------------------------------------------------------------------------%
+
+\begin{document}
+
+\sf
+
+\begin{tikzpicture}[thick,line cap=round,xscale=2,yscale=0.5]
+	\tikzstyle{bai}=[solid,circle,draw,inner sep=.8pt,fill=white];
+	\tikzstyle{hei}=[solid,circle,draw,inner sep=.8pt,fill];
+	\node[draw,circle,label=above:{Regression}] (R) at (0,1)  {R};
+	\node[draw,circle,label=below:{Diagram}]    (D) at (0,-1) {D};
+	\node[draw,circle,label=above:{\LaTeX}]     (L) at (1,0)  {L};
+	\node[draw,circle,label=above:{Zip}]        (Z) at (2,0)  {Z};
+	\draw[->] (R) -- (L);
+	\draw[->] (D) -- (L);
+	\draw[->] (L) -- (Z);
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,96 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{settings}
+%-----------------------------------------------------------------------------%
+%%% Appendix %%%
+\usepackage{appendixnumberbeamer}
+%-----------------------------------------------------------------------------%
+%%% Beamer Footline & Block %%%
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[default]
+\makeatother
+\setbeamertemplate{headline}{%
+\begin{beamercolorbox}{title in head/foot}
+\end{beamercolorbox}}
+\setbeamertemplate{footline}{\leavevmode\hbox{%
+\begin{beamercolorbox}[wd=0.5\paperwidth,ht=2.25ex,dp=1ex,right]{title in head/foot}%
+	\usebeamerfont{title in head/foot}%
+	\hfill\insertsectionhead\hspace{0.7em}
+\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=0.5\paperwidth,ht=2.25ex,dp=1ex]{block body}%
+	\usebeamerfont{title in head/foot}%
+	\usebeamercolor[fg]{section in head/foot}
+	\hspace{0.7em}\insertsubsectionhead
+	\hfill\textbf{\insertframenumber/\inserttotalframenumber{\ \ \ }}%
+\end{beamercolorbox}%
+}\vskip0pt}
+\makeatletter
+%-----------------------------------------------------------------------------%
+%%% Beamer Section Begin %%%
+\AtBeginSection[]{
+\begin{frame}%
+	\vfill%
+	\centering%
+	\begin{beamercolorbox}[sep=8pt,center]{title}%
+		\usebeamerfont{title}\textbf{\insertsectionhead}\par%
+	\end{beamercolorbox}%
+	\vfill%
+\end{frame}%
+}
+\AtBeginSubsection[]{
+	\begin{frame}%
+	\vfill%
+	\centering%
+	\begin{beamercolorbox}[sep=8pt,center]{title}%
+		\usebeamerfont{title}\textbf{\insertsectionhead}\par%
+		\vspace{0.5em}%
+		\usebeamerfont{title}\insertsubsectionhead\par%
+	\end{beamercolorbox}%
+	\vfill%
+	\end{frame}%
+}
+%-----------------------------------------------------------------------------%
+%%% Graphics %%%
+\usepackage{graphicx}
+\usepackage{subcaption}
+%-----------------------------------------------------------------------------%
+%%% Shruggie %%%
+\newcommand{\shruggie}{\texttt{¯\textbackslash\_(ツ)\_/¯}}
+%-----------------------------------------------------------------------------%
+%%% Color %%%
+\definecolor{myred}{RGB}{229,0,0}
+\definecolor{myblue}{RGB}{0,98,144}
+\definecolor{myyellow}{RGB}{246,182,50} % {225,217,0} colorblind
+\definecolor{mygrey}{RGB}{120,120,120} % {225,217,0} colorblind
+\newcommand{\red}[1]{\textcolor{myred}{#1}}
+\newcommand{\grey}[1]{\textcolor{mygrey}{#1}}
+\newcommand{\blue}[1]{\textcolor{myblue}{#1}}
+\newcommand{\yellow}[1]{\textcolor{myyellow}{#1}}
+%-----------------------------------------------------------------------------%
+%%% Math %%%
+\usepackage{amsmath,mathtools,amssymb,mathrsfs}
+\newcommand{\D}[2]{\frac{\mathrm{d}#2}{\mathrm{d}#1}}
+\newcommand{\inv}{^{-1}}
+\newcommand{\clustertt}{\text{Cl}^{\text{TT}}}
+% \usepackage{centernot}
+% \usepackage{accents}
+% \usepackage[makeroom]{cancel}
+% \newcommand{\raum}{\phantom{=}{\:\,}}
+% \newcommand{\asDemonstrated}{\null\nobreak\hfill\ensuremath{\blacksquare}}
+%-----------------------------------------------------------------------------%
+%%% Probability %%%
+\let\Pr\relax
+\DeclareMathOperator{\Pr}{\text{\textrm{\upshape\textbf{P}}}}
+\DeclareMathOperator{\E}{\text{\textrm{\upshape\textbf{E}}}}
+\DeclareMathOperator{\var}{Var}
+\DeclareMathOperator{\cov}{Cov}
+\newcommand{\iidto}{\overset{\text{\scriptsize iid}}{\sim}}
+\newcommand{\asto}{\overset{as}{\longrightarrow}}
+\newcommand{\pto}{\overset{p}{\longrightarrow}}
+\newcommand{\dto}{\overset{d}{\longrightarrow}}
+\newcommand{\pr}[1]{\Pr\left\{#1\right\}}
+\newcommand{\given}[1][]{\,#1|\,}
+%-----------------------------------------------------------------------------%
+%%% xeCJK %%%
+\usepackage{xeCJK}
+\setCJKmainfont{Noto Sans CJK KR Regular}
+%-----------------------------------------------------------------------------%

@@ -1,0 +1,18 @@
+\documentclass{standalone}
+%-----------------------------------------------------------------------------%
+%%% TikZ %%%
+\usepackage{tikz}
+%-----------------------------------------------------------------------------%
+
+\begin{document}
+
+\begin{tikzpicture}[thick,line cap=round,scale=2]
+	\node[circle,draw] (i) at (0,0)  {$i$};
+	\node[circle,draw] (j) at (60:1) {$j$};
+	\node[circle,draw] (k) at (1,0)  {$k$};
+	\draw[->] (i) -- (j);
+	\draw[->] (j) -- (k);
+	\draw[dotted,->,opacity=0.6] (i) -- node[pos=0.5,opacity=1,fill=white,inner sep=0.6pt]{?} (k);
+\end{tikzpicture}
+
+\end{document}

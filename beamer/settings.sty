@@ -1,0 +1,80 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{settings}
+%-----------------------------------------------------------------------------%
+\usepackage{listings}
+\lstdefinestyle{mystyle}{basicstyle=\ttfamily\footnotesize}
+\lstset{style=mystyle}
+%-----------------------------------------------------------------------------%
+%%% Fancy Verbatim %%%
+\usepackage{fancyvrb}
+%-----------------------------------------------------------------------------%
+%%% Beamer Section Begin %%%
+\AtBeginSection[]{
+\begin{frame}%
+	\vfill%
+	\centering%
+	\begin{beamercolorbox}[sep=8pt,center]{title}%
+		\usebeamerfont{title}\textbf{\insertsectionhead}\par%
+	\end{beamercolorbox}%
+	\vfill%
+\end{frame}%
+}
+\AtBeginSubsection[]{
+	\begin{frame}%
+	\vfill%
+	\centering%
+	\begin{beamercolorbox}[sep=8pt,center]{title}%
+		\usebeamerfont{title}\textbf{\insertsectionhead}\par%
+		\vspace{0.5em}%
+		\usebeamerfont{title}\insertsubsectionhead\par%
+	\end{beamercolorbox}%
+	\vfill%
+	\end{frame}%
+}
+%-----------------------------------------------------------------------------%
+%%% Color %%%
+\definecolor{myred}{RGB}{229,0,0}
+\definecolor{myblue}{RGB}{0,98,144}
+\definecolor{myyellow}{RGB}{246,182,50}
+\newcommand{\red}[1]{\textcolor{myred}{#1}}
+\newcommand{\blue}[1]{\textcolor{myblue}{#1}}
+\newcommand{\yellow}[1]{\textcolor{myyellow}{#1}}
+%-----------------------------------------------------------------------------%
+%%% Graphics %%%
+\usepackage{graphicx}
+%-----------------------------------------------------------------------------%
+%%% Date Time %%%
+\usepackage{datetime}
+\newtimeformat{zeit}%
+{\twodigit{\THEHOUR}:\twodigit{\THEMINUTE}:\twodigit{\THESECOND}}
+\settimeformat{zeit}%
+\newdateformat{meinesdatum}
+{\THEYEAR-\twodigit{\THEMONTH}-\twodigit{\THEDAY}}
+\setdefaultdate{\meinesdatum}
+%-----------------------------------------------------------------------------%
+%%% Beamer Footline & Block %%%
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[default]
+\makeatother
+\setbeamertemplate{headline}{%
+\begin{beamercolorbox}{title in head/foot}
+\end{beamercolorbox}}
+\setbeamertemplate{footline}{\leavevmode\hbox{%
+\begin{beamercolorbox}[wd=0.5\paperwidth,ht=2.25ex,dp=1ex,right]{title in head/foot}%
+	\usebeamerfont{title in head/foot}%
+	\hfill\insertsectionhead\hspace{0.7em}
+\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=0.5\paperwidth,ht=2.25ex,dp=1ex]{block body}%
+	\usebeamerfont{title in head/foot}%
+	\usebeamercolor[fg]{section in head/foot}
+	\hspace{0.7em}\insertsubsectionhead
+	\hfill\textbf{\insertframenumber/\inserttotalframenumber{\ \ \ }}%
+\end{beamercolorbox}%
+}\vskip0pt}
+\makeatletter
+%-----------------------------------------------------------------------------%
+%%% xeCJK %%%
+\usepackage{xeCJK}
+\newcommand{\chsansfont}{Noto Sans CJK KR Regular}
+\setCJKmainfont{\chsansfont}
+%-----------------------------------------------------------------------------%

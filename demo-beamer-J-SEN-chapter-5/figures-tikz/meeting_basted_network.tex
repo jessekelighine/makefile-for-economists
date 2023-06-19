@@ -1,0 +1,54 @@
+\documentclass{standalone}
+%-----------------------------------------------------------------------------%
+%%% Color %%%
+\usepackage[dvipsnames]{xcolor}
+\definecolor{myred}{RGB}{229,0,0}
+\definecolor{myblue}{RGB}{0,98,144}
+\definecolor{myyellow}{RGB}{246,182,50} % {225,217,0} colorblind
+\definecolor{mygrey}{RGB}{120,120,120} % {225,217,0} colorblind
+\newcommand{\red}[1]{\textcolor{myred}{#1}}
+\newcommand{\grey}[1]{\textcolor{mygrey}{#1}}
+\newcommand{\blue}[1]{\textcolor{myblue}{#1}}
+\newcommand{\yellow}[1]{\textcolor{myyellow}{#1}}
+%-----------------------------------------------------------------------------%
+%%% TikZ %%%
+\usepackage{tikz}
+\usetikzlibrary{calc}
+% \usetikzlibrary{positioning}
+% \usetikzlibrary{patterns}
+% \usetikzlibrary{fit}
+% \usetikzlibrary{angles,quotes}
+% \usetikzlibrary{intersections}
+% \usetikzlibrary{decorations.markings}
+%-----------------------------------------------------------------------------%
+
+\begin{document}
+
+\begin{tikzpicture}[thick,line cap=round,scale=1.5]
+	\tikzstyle{bai}=[draw,circle];
+	\tikzstyle{hei}=[solid,circle,draw,fill=black,inner sep=.8pt];
+	\node[bai,fill=myyellow] (i) at (0,0)   {$i$};
+	\node[bai] (a) at (210:1) {$a$};
+	\node[bai] (b) at (-90:1) {$b$};
+	\node[bai] (c) at (-30:1) {$c$};
+	\node[bai] (d) at (30:1)  {$d$};
+	\node[bai] (e) at (90:1)  {$e$};
+	\node[bai,fill=myyellow] (j) at (150:1) {$j$};
+	\draw[->] (i) -- (a);
+	\draw[->] (i) -- (b);
+	\draw[->] (i) -- (c);
+	\draw[->] (i) -- (d);
+	\draw[->] (i) -- (e);
+	\draw[->,red] (j) -- (i);
+	\draw[->,myblue] (j) -- (a); \draw[dotted,myblue,->,opacity=0.7] (j) .. controls ($(i)!1/3!(j)$) and ($(i)!1/3!(a)$) .. (a);
+	\draw[->,myblue] (j) -- (d); \draw[dotted,myblue,->,opacity=0.7] (j) .. controls ($(i)!1/3!(j)$) and ($(i)!1/3!(d)$) .. (d);
+	\draw[->,myred] (j) -- +(90+30:0.5);
+	\draw[->,myblue] (j) -- +(90+60:0.5);
+	\begin{scope}[xshift=2.2cm,yscale=0.3,yshift=1cm]
+		\node[myred]  at (0,0)  {$m_r=2$};
+		\node[myblue] at (0,-1) {$m_n=3$};
+		\node at (0,-2) {$\red{m_{r}}+\blue{m_{n}}=m=5$};
+	\end{scope}
+\end{tikzpicture}
+
+\end{document}

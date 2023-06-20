@@ -3,7 +3,7 @@
 This repository contains some examples of simple projects that uses Makefiles:
 
 - [`beamer`](./beamer/):
-  A beamer that introduces Makefiles to economists.
+  A [beamer presentation](./beamer/makefile-beamer.pdf) that introduces Makefiles to economists.
   The beamer itself also serves as an example of Makefiles.
 - [`demo-homework`](./demo-homework/):
   This is a minimal example of a Makefile.
@@ -25,6 +25,9 @@ There are two ways to use Makefile on Windows:
    so you can actually use `make` natively on Windows.
    Usually this is done by first install a package manager such as [chocolatey](https://chocolatey.org/)
    and then install `make` via the package manager.
+
+   Note that if you choose to use `make` natively on Windows,
+   then the commands in the Makefile should be in *DOS shell* syntax.
 
    - You can find an introduction to chocolatey [here](https://www.youtube.com/watch?v=mQI8OWeTpRo).
    - You can find an example of using `make` with a python project on Windows [here](https://www.youtube.com/watch?v=Yt-UF7fNLJE).

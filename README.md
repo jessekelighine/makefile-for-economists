@@ -12,6 +12,16 @@ This repository contains some examples of simple projects that uses Makefiles:
   This is a real project I created for a presentation.
   This project contains the most complicated syntax with some advanced syntax and no comments.
 
+## Dependencies
+
+This introduction requires the following dependencies/commands:
+
+- `make`: Of course, this is an intro to `make`.
+- `pdflatex` and `latexmk`: These two commands should come with the full
+  [TeXLive](https://www.tug.org/texlive/) distribution,
+  which would also include all $\LaTeX$ dependencies required by the demonstrations.
+- `Rscript`: This should come with a standard installation of `R`.
+
 ## Makefile for Windows
 
 There are two ways to use Makefile on Windows:
